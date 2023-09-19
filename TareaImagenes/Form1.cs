@@ -22,16 +22,12 @@ namespace TareaImagenes
         public Form1()
         {
             InitializeComponent();
-            //aleatorio();
-            cargar();
+            aleatorio();
             cargarImagenes();
          
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void cargarImagenes()
         {
@@ -39,11 +35,17 @@ namespace TareaImagenes
                 Button boton = new Button();
                 boton.Width = 60;
                 boton.Height = 60;
-                boton.BackgroundImage = Image.FromFile(@"C:\\Users\\usuario\\source\repos\\TareaImagenes\\imagenes\\" + listImagenes[i] + ".JPG");
+                boton.BackgroundImage = Image.FromFile(@"imagenes\" + listImagenes[i] + ".JPG");
                 boton.BackgroundImageLayout = ImageLayout.Zoom;
                 flp2.Controls.Add(boton);
             }
         }
+
+       
+
+            
+        
+        
 
     
 
@@ -64,21 +66,31 @@ namespace TareaImagenes
                 }
                 listImagenes[i] = numAleatorio;
                 aleatorios.Add(numAleatorio);
+               
             }
-            
+           
         }
 
-        private void cargar() {
-            for (int i = 0; i < listImagenes.Length; i++) {
-                listImagenes[i] = i;
-            }
+
+        
+                
+                    
+
+           
+
         }
+
+
+
+
+
+       
 
       
     }
 
 
-    }
+    
 
     
   

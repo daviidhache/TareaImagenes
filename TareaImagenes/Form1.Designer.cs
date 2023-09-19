@@ -43,7 +43,7 @@ namespace TareaImagenes
             this.label2.Size = new System.Drawing.Size(95, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "The Simpons ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+   
             // 
             // flp2
             // 

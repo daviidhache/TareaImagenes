@@ -18,6 +18,7 @@ namespace TareaImagenes
          static int[] listImagenes = new int[20];
         static ArrayList aleatorios = new ArrayList();
          static int salida;
+        static int tag;
         
 
         public Form1()
@@ -53,14 +54,14 @@ namespace TareaImagenes
             Button boton = (Button)sender;
             
                 
-                if (salida == Convert.ToInt32(boton.Tag))
+                if (tag == Convert.ToInt32(boton.Tag))
                 {
-                    boton.BackgroundImage = Image.FromFile(@"imagenes\" + listImagenes[Convert.ToInt16(boton.Tag)] + ".JPG");
+                    boton.BackgroundImage = Image.FromFile(@"imagenes\" + listImagenes[Convert.ToInt16(flp2.Controls.IndexOf(boton))] + ".JPG");
                     MessageBox.Show("Me encontraste");
                 timer1.Start();
                 }
                 else {
-                    boton.BackgroundImage = Image.FromFile(@"imagenes\" + listImagenes[Convert.ToInt16(boton.Tag)] + ".JPG");
+                    boton.BackgroundImage = Image.FromFile(@"imagenes\" + listImagenes[Convert.ToInt16(flp2.Controls.IndexOf(boton)) ] + ".JPG");
                     MessageBox.Show("Fallaste");
                     boton.BackgroundImage = Image.FromFile(@"back.png");
 
@@ -110,7 +111,8 @@ namespace TareaImagenes
         {
 
             salida = new Random().Next(0, 20);
-            label1.Image = Image.FromFile(@"imagenes\" + listImagenes[salida]   + ".JPG");
+            label1.Image = Image.FromFile(@"imagenes\" + listImagenes[salida] + ".JPG");
+            tag = listImagenes[salida];
             label1.Enabled = true;
 
 
